@@ -165,52 +165,52 @@ on."
   "Default expressions to highlight in Processing mode.")
 
 ;; YASnippets
-(if (fboundp 'yas/minor-mode)
-    (progn
-      (require 'yasnippet)
-      (message "processing-mode: defining YASnippets")
-      (yas/define-snippets
-       'processing-mode
-       '(
-	 ;; (key template name condition)
-	 ("tri" "triangle(${x1}, ${y1}, ${x2}, ${y2}, ${x3}, ${y3});"
-	  "triangle" nil)
-	 ("l(" "line(${x1}, ${y1}, ${x2}, ${y2});" "line 2d" nil)
-	 ("l(.3d" "line(${x1}, ${y1}, ${z1}, ${x2}, ${y2}, ${z2});" "line 3d" nil)
-	 ("arc" "arc(${x}, ${y}, ${width}, ${height}, ${start}, ${stop});" "arc" nil)
-	 ("p(" "point(${x}, ${y});" "point 2d" nil)
-	 ("p(.3d" "point(${x}, ${y}, ${z});" "point 3d" nil)
-	 ("quad" "quad(${x1}, ${y1}, ${x2}, ${y2}, ${x3}, ${y3}, ${x4}, ${y4});"
-	  "quad" nil)
-	 ("ell" "ellipse(${x}, ${y}, ${width}, ${height});" "ellipse" nil)
-	 ("rect" "rect(${x}, ${y}, ${width}, ${height});" "rect" nil)
+;; (if (fboundp 'yas/minor-mode)
+;;     (progn
+;;       (require 'yasnippet)
+;;       (message "processing-mode: defining YASnippets")
+;;       (yas/define-snippets
+;;        'processing-mode
+;;        '(
+;; 	 ;; (key template name condition)
+;; 	 ("tri" "triangle(${x1}, ${y1}, ${x2}, ${y2}, ${x3}, ${y3});"
+;; 	  "triangle" nil)
+;; 	 ("l(" "line(${x1}, ${y1}, ${x2}, ${y2});" "line 2d" nil)
+;; 	 ("l(.3d" "line(${x1}, ${y1}, ${z1}, ${x2}, ${y2}, ${z2});" "line 3d" nil)
+;; 	 ("arc" "arc(${x}, ${y}, ${width}, ${height}, ${start}, ${stop});" "arc" nil)
+;; 	 ("p(" "point(${x}, ${y});" "point 2d" nil)
+;; 	 ("p(.3d" "point(${x}, ${y}, ${z});" "point 3d" nil)
+;; 	 ("quad" "quad(${x1}, ${y1}, ${x2}, ${y2}, ${x3}, ${y3}, ${x4}, ${y4});"
+;; 	  "quad" nil)
+;; 	 ("ell" "ellipse(${x}, ${y}, ${width}, ${height});" "ellipse" nil)
+;; 	 ("rect" "rect(${x}, ${y}, ${width}, ${height});" "rect" nil)
 	 
-	 ;; Color Setting
-	 ("background" "background(${gray_or_color_or_hex});" "background .." nil)
-	 ("background.ca" "background(${gray_or_color_or_hex}, ${alpha});"
-	  "background .. alpha" nil)
-	 ("background.rgb" "background(${red}, ${green}, ${blue});" "background RGB" nil)
-	 ("background.rgba" "background(${red}, ${green}, ${blue}, ${alpha});"
-	  "background RGBA" nil)
-	 ("colorm" "colorMode(${RGB_or_HSV});" "color mode" nil)
-	 ("colorm.r" "colorMode(${RGB_or_HSV}, ${range});" "color mode range" nil)
-	 ("colorm.rgb" "colorMode(${RGB_or_HSV}, ${range1}, ${range2}, ${range3});"
-	  "color mode RGB/HSV range" nil)
-	 ("colorm.rgba" "colorMode(${RGB_or_HSV}, ${range1}, ${range2}, ${range3}, ${range4});"
-	  "color mode RGB/HSV, A range" nil)
-	 ("stroke" "stroke(${gray_or_color_or_hex});" "stroke .." nil)
-	 ("stroke.ca" "stroke(${gray_or_color_or_hex}, ${alpha});" "stroke .. alpha" nil)
-	 ("stroke.rgb" "stroke(${red}, ${green}, ${blue});" "stroke RGB" nil)
-	 ("stroke.rgba" "stroke(${red}, ${green}, ${blue}, ${alpha});" "stroke RGBA" nil)
-	 ("fill" "fill(${gray_or_color_or_hex});" "fill .." nil)
-	 ("fill.ca" "fill(${gray_or_color_or_hex}, ${alpha});" "fill .. alpha" nil)
-	 ("fill.rgb" "fill(${red}, ${green}, ${blue});" "fill RGB" nil)
-	 ("fill.rgba" "fill(${red}, ${green}, ${blue}, ${alpha});" "fill RGBA" nil)
-	 )
-       'java-mode)
-      t)
-  (progn
-    (message "processing-mode: YASnippets not installed. Not defining any snippets.")
-    nil))
+;; 	 ;; Color Setting
+;; 	 ("background" "background(${gray_or_color_or_hex});" "background .." nil)
+;; 	 ("background.ca" "background(${gray_or_color_or_hex}, ${alpha});"
+;; 	  "background .. alpha" nil)
+;; 	 ("background.rgb" "background(${red}, ${green}, ${blue});" "background RGB" nil)
+;; 	 ("background.rgba" "background(${red}, ${green}, ${blue}, ${alpha});"
+;; 	  "background RGBA" nil)
+;; 	 ("colorm" "colorMode(${RGB_or_HSV});" "color mode" nil)
+;; 	 ("colorm.r" "colorMode(${RGB_or_HSV}, ${range});" "color mode range" nil)
+;; 	 ("colorm.rgb" "colorMode(${RGB_or_HSV}, ${range1}, ${range2}, ${range3});"
+;; 	  "color mode RGB/HSV range" nil)
+;; 	 ("colorm.rgba" "colorMode(${RGB_or_HSV}, ${range1}, ${range2}, ${range3}, ${range4});"
+;; 	  "color mode RGB/HSV, A range" nil)
+;; 	 ("stroke" "stroke(${gray_or_color_or_hex});" "stroke .." nil)
+;; 	 ("stroke.ca" "stroke(${gray_or_color_or_hex}, ${alpha});" "stroke .. alpha" nil)
+;; 	 ("stroke.rgb" "stroke(${red}, ${green}, ${blue});" "stroke RGB" nil)
+;; 	 ("stroke.rgba" "stroke(${red}, ${green}, ${blue}, ${alpha});" "stroke RGBA" nil)
+;; 	 ("fill" "fill(${gray_or_color_or_hex});" "fill .." nil)
+;; 	 ("fill.ca" "fill(${gray_or_color_or_hex}, ${alpha});" "fill .. alpha" nil)
+;; 	 ("fill.rgb" "fill(${red}, ${green}, ${blue});" "fill RGB" nil)
+;; 	 ("fill.rgba" "fill(${red}, ${green}, ${blue}, ${alpha});" "fill RGBA" nil)
+;; 	 )
+;;        'java-mode)
+;;       t)
+;;   (progn
+;;     (message "processing-mode: YASnippets not installed. Not defining any snippets.")
+;;     nil))
 
 (provide 'processing-mode)
