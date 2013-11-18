@@ -8,6 +8,14 @@
 (setq echo-keystrokes 0.1)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;; misc visual/layout
+(setq-default indent-tabs-mode nil) ; always replace tabs with spaces
+(setq-default tab-width 4)          ; set tab width to 4 for all buffers
+(setq c-basic-offset 4)
+(setq cperl-indent-level 4)
+(setq ruby-indent-level 4)
+
+
 ;; word count function (courtesy djcb @ emacs-fu.blogspot.com)
 (defun count-words (&optional begin end)
   "count words between BEGIN and END (region); if no region defined, count words in buffer"
@@ -44,8 +52,13 @@
       (append (list (cons "\\.t$" 'tads-mode))
 	      auto-mode-alist))
 
+(require 'haxe-mode)
 (require 'lua-mode)
+(require 'go-mode)
+
 (require 'ess-site) ; ESS-mode for statistics (e.g. R)
+(setq ess-directory "~/Development/R/")
+
 
 ; Processing
 (autoload 'processing-mode "processing-mode" "Processing mode" t)
@@ -70,8 +83,8 @@
 
 (custom-set-variables
  '(erc-nick "h_double")
-; '(erc-server "irc.synirc.net")
- '(erc-server "irc.freenode.net")
+ '(erc-server "irc.synirc.net")
+; '(erc-server "irc.freenode.net")
  '(safe-local-variable-values (quote ((folded-file . t)))))
 
 (custom-set-faces

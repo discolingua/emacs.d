@@ -3,3 +3,9 @@ ls
 pwd
 w
 ls
+cd
+for FILE in foo/* { echo "processing $FILE "}
+for FILE in foo/* { echo "processing $FILE "; echo $FILE >> ~/filetest }
+for FILE in foo/* { echo "processing $FILE "; echo $FILE >> ~/filetest 1> /dev/null 2> /dev/null }
+for FILE in foo/* { echo "processing $FILE "; cat $FILE 1> /dev/null 2> /dev/null }
+for FILE in foo/* { echo "processing $FILE "; cat $FILE }
