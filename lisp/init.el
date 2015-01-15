@@ -1,6 +1,4 @@
 ;; turn off unused GUI bits
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
 (menu-bar-mode -1)
 (blink-cursor-mode -1)
 (setq inhibit-splash-screen t)
@@ -94,6 +92,8 @@
        (eval-after-load "color-theme"
 	 '(progn
 	    (server-start) ; server for emacsclient
+        (tool-bar-mode -1)
+        (scroll-bar-mode -1)
 	    (menu-bar-mode 1)
 	    (color-theme-initialize)
 	    (color-theme-solarized-dark)))))
